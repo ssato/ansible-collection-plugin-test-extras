@@ -66,10 +66,9 @@ def file_contains(path, pattern):
     :param pattern: Regex pattern to search for
     :raises: Error, OSError, IOError, Ansible*Error
     """
-    reg = re.compile(pattern)  # :raises: some errors
     content = open(path).read()  # :raises: OSError, IOError
 
-    return re.search(reg, content)
+    return re.search(pattern, content, re.MULTILINE) is not None
 
 
 class TestModule(object):

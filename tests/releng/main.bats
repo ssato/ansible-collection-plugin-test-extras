@@ -9,6 +9,7 @@ export _NAME=$(sed -nr 's/^name.*: (.+)/\1/p' ${_SRCDIR:?}/galaxy.yml |
 
 function setup () {
     cd $BATS_TEST_DIRNAME
+    export MY_COLLECTION_PATH=${MY_COLLECTION_PATH:-${BATS_TMPDIR:?}}
 }
 
 function check_results () {
@@ -23,14 +24,14 @@ EOM
 
 @test "Build an Ansible collection artifact" {
     run ansible-galaxy collection build -v --force \
-        --output-path ${BATS_TMPDIR:?} ${_SRCDIR}
+        --output-path ${MY_COLLECTION_PATH:?} ${_SRCDIR}
     check_results
 }
 
 @test "Install using ansible-galaxy" {
     run ansible-galaxy collection install -v \
-        -p ${BATS_TMPDIR} \
-        $(ls -1t ${BATS_TMPDIR}/${_NAME}*.tar.gz | head -n 1)
+        -p ${MY_COLLECTION_PATH} \
+        $(ls -1t ${MY_COLLECTION_PATH}/${_NAME}*.tar.gz | head -n 1)
     check_results
 }
 
