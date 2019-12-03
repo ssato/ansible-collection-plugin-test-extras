@@ -1,0 +1,25 @@
+---
+sudo: required
+dist: xenial
+
+language: python
+python:
+  - 2.7
+  - 3.7
+
+matrix:
+  include:
+    - python: 3.7
+      env: TOXENV=py37-ansible28
+
+before_install:
+  - sudo apt-get -qq update
+  - sudo apt-get install -y bash
+
+install:
+  - pip install tox-travis
+
+script:
+  - tox
+
+# vim:sw=2:ts=2:et:

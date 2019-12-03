@@ -1,0 +1,29 @@
+---
+
+namespace: ssato
+name: plugin_test_extras
+version: 0.1.0
+description: A collection of extra test plugins for Ansible
+readme: README.md
+authors:
+  - Satoru SATOH (https://github.com/ssato/)
+dependencies: []
+license:
+  - MIT
+license_file: LICENSE.MIT
+tags:
+  - demo
+  - collection
+  - utility
+  - test
+
+build_ignore:
+  - .gitignore
+  - .travis.yml
+#  - tox.ini
+
+homepage: https://github.com/ssato/ansible-collection-plugin-test-extras
+repository: https://github.com/ssato/ansible-collection-plugin-test-extras.git
+issues: https://github.com/ssato/ansible-collection-plugin-test-extras/issues
+
+# vim:sw=2:ts=2:et:
