@@ -14,6 +14,7 @@ import unittest
 
 from ansible.errors import AnsibleModuleError, AnsibleFileNotFound
 
+
 sys.path.append("plugins/test/")
 import files as TT  # noqa
 
