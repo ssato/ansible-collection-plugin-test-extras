@@ -6,10 +6,10 @@
 export _SRCDIR=$(realpath $BATS_TEST_DIRNAME/../../)
 export _NAME=$(sed -nr 's/^name.*: (.+)/\1/p' ${_SRCDIR:?}/galaxy.yml |
                sed 'N; s/\n/-/g')
+export MY_COLLECTION_PATH=${MY_COLLECTION_PATH:-${BATS_TMPDIR:?}/collections}
 
 function setup () {
     cd $BATS_TEST_DIRNAME
-    export MY_COLLECTION_PATH=${MY_COLLECTION_PATH:-${BATS_TMPDIR:?}}
 }
 
 function check_results () {

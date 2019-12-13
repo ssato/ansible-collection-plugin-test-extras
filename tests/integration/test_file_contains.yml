@@ -1,0 +1,26 @@
+---
+- name: Test file_contains test plugin
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  vars:
+    target_file: test_file_contains.yml
+    marker: 08b6f148da1d3bccf7d07e2755856fcba3c0e4e3
+    pattern: "marker: 08b.*e3"
+
+  collections:
+    - ssato.plugin_test_extras
+
+  tasks:
+    - name: Test file_contains Test plugins - OK cases
+      assert:
+        that:
+          - ssato.plugin_test_extras.file_contains(target_file, marker)
+          - ssato.plugin_test_extras.file_contains(target_file, pattern)
+          - not(ssato.plugin_test_extras.file_contains("/dev/null", pattern))
+        fail_msg: |
+          path: {{ target_file }}
+          marker: {{ marker }}
+          pattern: {{ pattern }}
+
+# vim:sw=2:ts=2:et:

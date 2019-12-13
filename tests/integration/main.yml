@@ -1,0 +1,4 @@
+---
+- import_playbook: test_file_contains.yml
+
+# vim:sw=2:ts=2:et:
