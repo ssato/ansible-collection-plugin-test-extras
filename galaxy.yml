@@ -1,5 +1,6 @@
 ---
-
+# yamllint disable-line rule:line-length
+# .. seealso:: https://docs.ansible.com/ansible/latest/dev_guide/collections_galaxy_meta.html#collections-galaxy-meta
 namespace: ssato
 name: plugin_test_extras
 version: 0.1.0
@@ -16,11 +17,6 @@ tags:
   - collection
   - utility
   - test
-
-build_ignore:
-  - .gitignore
-  - .travis.yml
-#  - tox.ini
 
 homepage: https://github.com/ssato/ansible-collection-plugin-test-extras
 repository: https://github.com/ssato/ansible-collection-plugin-test-extras.git
