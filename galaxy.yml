@@ -2,9 +2,9 @@
 # yamllint disable-line rule:line-length
 # .. seealso:: https://docs.ansible.com/ansible/latest/dev_guide/collections_galaxy_meta.html#collections-galaxy-meta
 namespace: ssato
-name: plugin_test_extras
+name: infraspec
 version: 0.1.0
-description: A collection of extra test plugins for Ansible
+description: A collection of extra test and filter plugins for InfraCI
 readme: README.md
 authors:
   - Satoru SATOH (https://github.com/ssato/)
@@ -13,13 +13,13 @@ license:
   - MIT
 license_file: LICENSE.MIT
 tags:
-  - demo
   - collection
   - utility
   - test
+  - infraci
 
-homepage: https://github.com/ssato/ansible-collection-plugin-test-extras
-repository: https://github.com/ssato/ansible-collection-plugin-test-extras.git
-issues: https://github.com/ssato/ansible-collection-plugin-test-extras/issues
+homepage: https://github.com/ssato/ansible-collection-infraspec
+repository: https://github.com/ssato/ansible-collection-infraspec
+issues: https://github.com/ssato/ansible-collection-infraspec/issues
 
 # vim:sw=2:ts=2:et:
